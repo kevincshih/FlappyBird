@@ -6,6 +6,7 @@ EntityBase {
   entityType: "player"
   width: 26
   height: 26
+  property int velocity: 120
 
   SpriteSequenceVPlay {
     id: bird

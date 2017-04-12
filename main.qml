@@ -31,6 +31,10 @@ GameWindow {
     width: 320
     height: 480
 
+    property int playerinitx: 160
+    property int pipe1initx: 40
+    property int pipe2initx: 280
+
     Image {
       id: bg
       source: "../assets/bg.png"
@@ -40,13 +44,13 @@ GameWindow {
 
     Pipe {
       id: pipe1
-      x: 400
+      x: 40
       y: 30+Math.random()*200
     }
 
     Pipe {
       id: pipe2
-      x: 640
+      x: 280
       y: 30+Math.random()*200
     }
 
@@ -58,8 +62,8 @@ GameWindow {
 
     Player {
       id: player
-      x: 147
-      y: 167
+      x: 160
+      y: 180
     }
 
     PhysicsWorld {
@@ -93,11 +97,11 @@ GameWindow {
 
     function reset() {
       scene.gameState = "wait"
-      pipe1.x = 400
+      pipe1.x = pipe1initx
       pipe1.y = 30+Math.random()*200
-      pipe2.x = 640
+      pipe2.x = pipe2initx
       pipe2.y = 30+Math.random()*200
-      player.x = 160
+      player.x = playerinitx
       player.y = 180
       scene.score = 0
     }
